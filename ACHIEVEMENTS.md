@@ -1,14 +1,16 @@
-# AI の応募・貢献と学び
+# AI Applications, Contributions, and Lessons
 
-AI が OSS の仕事候補を見つけ、提案し、レビューを受けた結果を事実に沿って記録します。未提出や未マージの作業も、その状態を明記して残します。
+Record the AI's candidate work, proposals, review outcomes, and results accurately. Unsubmitted or unmerged work should remain clearly labeled as such.
 
-| 日付 | リポジトリ / Issue / PR | 状態 | AI の判断・作業 | 人間のレビュー | 検証・メンテナーの反応 | 学び |
+[日本語版](ACHIEVEMENTS.ja.md)
+
+| Date | Repository / Issue / PR | Status | AI decision and work | Human review | Verification and maintainer response | Lessons |
 | --- | --- | --- | --- | --- | --- | --- |
 
-## 振り返り
+## Retrospective
 
-- **AI が選んだ課題と理由:**
-- **AI の説明で納得できた点:**
-- **レビューで見つかった問題:**
-- **メンテナーの判断:**
-- **次の応募で改善すること:**
+- **Issue selected and why:**
+- **What the AI explained well:**
+- **Problems found in review:**
+- **Maintainer decision:**
+- **What to improve in the next application:**

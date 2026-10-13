@@ -1,37 +1,39 @@
-# AI から人間へのレビュー運用
+# Human Review Workflow
 
-この実験では AI が候補 Issue を探して修正案を作り、人間のあなたが採用担当兼レビュー担当として最初の成果物を審査します。
+The AI finds candidate issues and prepares changes. You act as hiring manager and first reviewer.
 
-## 役割
+[日本語版](review-workflow.ja.md)
 
-- **AI（応募者）**: Issue とコードを調査し、取り組む理由を説明し、修正・検証・上流への提案文を準備します。
-- **あなた（レビュー担当）**: Issue の理解、方針、差分、検証の妥当性を確認し、提出可否を判断します。
-- **外部提出**: あなたのレビューと明示的な承認の後にだけ、AI がコメントや PR 提出を行います。
+## Roles
 
-## AI がレビュー依頼に含めるもの
+- **AI (applicant):** researches the issue and code, explains why it chose the task, prepares a focused fix, verifies it, and drafts an upstream proposal.
+- **You (reviewer):** check the issue understanding, approach, diff, and verification, then decide whether it may be submitted.
+- **External submission:** the AI may comment or open a PR only after your review and explicit approval.
 
-1. Issue URL と受け入れ条件
-2. なぜこの課題を選んだか、重複 PR とメンテナーの意向をどう確認したか
-3. 原因の説明と根拠となるファイル・行
-4. 変更内容、代替案、互換性や副作用
-5. 実行した検証と結果。未実施や失敗も明記
-6. 差分全体と、判断が必要な箇所
-7. 上流へのコメントや PR の草案
+## Every review request should include
 
-## あなたの確認項目
+1. Issue URL and acceptance criteria
+2. Why the AI selected it and how it checked for duplicate PRs and maintainer expectations
+3. Explanation of the cause, with relevant files and lines
+4. Change summary, alternatives, compatibility, and side effects
+5. Verification performed and results, including failures and anything not run
+6. Full diff and any decisions needing your input
+7. Draft text for an upstream comment or PR
 
-- AI は Issue と受け入れ条件を正しく理解しているか。
-- 変更は小さく、Issue の範囲内か。
-- AI は差分の各部分について、何をし、なぜ必要か説明できるか。
-- 境界条件、型、アクセシビリティ、セキュリティへの影響を確認しているか。
-- 検証内容は変更に合っており、未実施・失敗を隠していないか。
-- 上流リポジトリの CONTRIBUTING、ライセンス、CLA、PR テンプレートを確認したか。
-- 提案文がAIによる成果であることを誤解なく説明しているか。
+## Reviewer checklist
 
-## 判断
+- Did the AI understand the issue and acceptance criteria?
+- Is the change small and within scope?
+- Can the AI explain what each part of the diff does and why it is needed?
+- Were edge cases, types, accessibility, and security implications considered?
+- Does the verification match the change, with failures and omissions disclosed?
+- Were the upstream contribution guide, license, CLA, and PR template checked?
+- Does the proposal clearly describe this as AI-generated work?
 
-- **承認**: 内容に納得したら、外部提出を明示的に依頼します。
-- **修正依頼**: 指摘をもとにAIが直し、差分全体をもう一度レビューします。
-- **見送り**: 重複、理解不足、メンテナーの意向、検証不能が残る場合。理由と学びを記録して別候補を探します。
+## Decision
 
-AI が作ったというだけで正しいとは扱いません。この実験の見どころは、AIが成果物だけでなく判断と説明にも責任を持てるかです。
+- **Approve:** explicitly ask the AI to submit the work upstream.
+- **Request changes:** the AI revises the work, then presents the full diff for another review.
+- **Pass:** if overlap, unclear reasoning, maintainer concerns, or unverifiable behavior remain, record why and look for another candidate.
+
+AI output is not presumed correct. The experiment tests whether AI can own its reasoning and explanation as well as its deliverable.

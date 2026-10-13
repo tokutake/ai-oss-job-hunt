@@ -1,34 +1,36 @@
-# 案件候補の評価基準
+# Issue Selection Criteria
 
-候補ごとに、次の各項目を 0〜2 点で採点します。2 は明確に良い、1 は判断材料が足りない、0 は不適合です。
+Score each candidate from 0 to 2 on every criterion: 2 means clearly suitable, 1 means more information is needed, and 0 means unsuitable.
 
-| 観点 | 2 点の目安 |
+[日本語版](issue-selection.ja.md)
+
+| Criterion | A score of 2 means |
 | --- | --- |
-| 受け入れ可能性 | Issue が open。メンテナーが外部貢献を受け付け、必要な事前合意が取れている |
-| 重複の少なさ | 同じ修正を扱う open PR がなく、最近のマージにも含まれていない |
-| 小ささ | 独立した一つの挙動・表示・ドキュメント修正に限定できる |
-| 再現性 | 手順、環境、期待動作を手元で確認できる |
-| 変更の明確さ | 変更箇所と受け入れ条件が明示され、広い設計判断を要しない |
-| 検証可能性 | リポジトリの既存コマンドや明確な手動確認で結果を確かめられる |
-| 学習価値 | 使う技術やコードの流れを説明できる程度の学びがある |
+| Acceptance | The issue is open, outside contributions are welcome, and any needed maintainer agreement is in place |
+| Low overlap | No open PR addresses the same change, and recent merges have not already fixed it |
+| Small scope | The work can be limited to one behavior, display, or documentation change |
+| Reproducibility | Steps, environment, and expected behavior can be verified |
+| Clear change | The affected area and acceptance criteria are clear and need little design judgment |
+| Verifiability | Existing project commands or a clear manual check can confirm the result |
+| Learning value | The AI can explain the relevant technology and code path |
 
-**目安:** 10 点以上かつ「受け入れ可能性」「重複の少なさ」が各 2 点なら着手候補。どれか 0 点なら保留または除外し、理由を記録します。
+**Target:** 10 or more points, with 2 points for both Acceptance and Low overlap. Any zero means hold or reject the candidate and record why.
 
-## 除外・保留条件
+## Hold or reject when
 
-- 同じ問題を解決する open PR がある、または既に修正が main に入っている。
-- Issue が closed / stale / abandoned、もしくはメンテナーが対応中と示している。
-- Issue が質問・機能提案・大規模な設計変更で、最初の貢献には範囲が広い。
-- 再現できず、報告者やメンテナーの追加情報が必要。
-- 変更を説明できない、または安全性・課金・認証など影響の大きな領域。
-- CLA、ライセンス、貢献者ポリシー等の条件が不明なまま。
+- An open PR fixes the same problem, or the fix is already on the default branch.
+- The issue is closed, stale, abandoned, or maintainers say they are handling it.
+- It is a question, broad feature request, or large design change unsuitable for a first contribution.
+- It cannot be reproduced and needs more information from the reporter or maintainers.
+- The change touches high-impact security, billing, or authentication behavior the AI cannot confidently assess.
+- License, CLA, or contribution policy requirements remain unclear.
 
-## 調査時の確認
+## Research checklist
 
-1. Issue の状態、本文、コメント、ラベル、最終更新日を読む。
-2. Issue 番号、主要な症状・関数名・ファイル名で open PR を検索する。
-3. 関連 PR の closed / merged も確認し、既に取り込まれた修正がないか見る。
-4. 既定ブランチの最近の変更と該当コードを確認する。
-5. 着手直前にも状態を再確認し、台帳に確認日時を記録する。
+1. Read the issue state, body, comments, labels, and last-updated date.
+2. Search open PRs by issue number, symptom, function, and file names.
+3. Check closed and merged PRs for an existing fix.
+4. Inspect recent changes on the default branch and the relevant code.
+5. Recheck immediately before starting and record the date in the tracker.
 
-点数は候補を比べる補助であり、メンテナーの意向やリポジトリの規則に優先しません。
+Scores help compare candidates. They do not override maintainer guidance or repository rules.

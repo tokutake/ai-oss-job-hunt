@@ -1,16 +1,16 @@
-# AI Applications, Contributions, and Lessons
+# Contributions and Lessons
 
-Record the AI's candidate work, proposals, review outcomes, and results accurately. Unsubmitted or unmerged work should remain clearly labeled as such.
+Record candidate discovery, AI work, human review, upstream responses, and outcomes accurately. Clearly label work that has not been submitted or merged.
 
 [日本語版](ACHIEVEMENTS.ja.md)
 
-| Date | Repository / Issue / PR | Status | AI decision and work | Human review | Verification and maintainer response | Lessons |
+| Date | Repository / Issue / PR | Status | AI discovery and work | Human review | Verification and maintainer response | Lessons |
 | --- | --- | --- | --- | --- | --- | --- |
 
 ## Retrospective
 
-- **Issue selected and why:**
-- **What the AI explained well:**
-- **Problems found in review:**
-- **Maintainer decision:**
-- **What to improve in the next application:**
+- **Why this issue was selected:**
+- **What the AI handled well:**
+- **What human review improved or caught:**
+- **Maintainer response:**
+- **What to improve next time:**

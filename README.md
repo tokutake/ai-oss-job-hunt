@@ -1,43 +1,45 @@
 # AI OSS Job Hunt
 
-AI が OSS の仕事を探して応募し、実際の貢献を通じて「AI に仕事を任せられるか」を試す半分ジョーク、半分本気の実験です。AI が候補 Issue を探し、コードを読み、修正案を作り、成果と失敗を公開します。人間のあなたは採用担当兼レビュー担当として、最初の提出物を確認します。
+A half-joke, half-serious experiment: can an AI find open-source work, make a useful contribution, and earn the trust of maintainers? The AI searches for issues, studies the code, prepares a change, and reports both results and failures. You are the hiring manager and first reviewer.
 
-## このプロジェクトでいう「就職活動」
+[日本語版はこちら](README.ja.md)
 
-- OSS の未解決 Issue を、AI 自身が仕事の候補として探します。
-- AI が Issue の意図・既存コード・重複 PR を調べ、着手するか判断します。
-- AI が修正案を実装し、根拠と検証結果を説明します。
-- あなたが最初のコードレビューを行い、提出可否を判断します。
-- 承認された提案を上流 OSS に提出し、メンテナーの反応や結果を記録します。
+## What “job hunting” means here
 
-これは人間の就職活動を代行する仕組みではありません。AI が仕事を見つけ、責任を持って成果を出せるかを試すプロジェクトです。
+- The AI finds open issues as potential work.
+- It checks the issue, existing code, duplicate pull requests, and maintainer expectations before choosing a task.
+- It prepares a focused change and explains the reasoning and verification.
+- You review the first submission and decide whether it is ready.
+- After your approval, the AI submits the contribution upstream and records the maintainers’ response.
 
-## 進め方
+This project does not automate a human job search. It tests whether an AI can find work, deliver responsibly, and explain its decisions.
 
-1. [案件候補の評価基準](docs/issue-selection.md)に沿って、AI が候補を探します。
-2. 候補と重複確認の結果を [Issue / PR 台帳](TRACKER.md)に記録します。
-3. AI が Issue の再現方法・期待動作・受け入れ条件を整理し、作業方針を説明します。
-4. AI が小さな修正を作り、変更点・影響範囲・検証結果を提示します。
-5. あなたが [初期レビュー手順](docs/review-workflow.md)に沿ってレビューします。
-6. あなたの承認後に、AI が外部 OSS へのコメントや PR 提出を進めます。
-7. 採用（マージ）・見送り・修正依頼などの結果を [活動記録](ACHIEVEMENTS.md)に残します。
+## Workflow
 
-## 約束
+1. The AI evaluates candidates using the [issue selection criteria](docs/issue-selection.md).
+2. It records candidates and duplicate checks in the [issue and PR tracker](TRACKER.md).
+3. It explains the issue, reproduction steps, expected behavior, and acceptance criteria.
+4. It prepares a small change and reports scope, risks, and verification results.
+5. You review it using the [review workflow](docs/review-workflow.md).
+6. Only after your explicit approval does the AI comment on or submit a PR to an external project.
+7. The AI records acceptance, rejection, revision requests, and lessons in [activity log](ACHIEVEMENTS.md).
 
-- 既存 PR と競合する提案を出さないよう、着手前と提出前に確認します。
-- 最初は小さく、Issue の目的に沿った変更だけを行います。
-- AI はコードだけでなく、判断の根拠と未検証の点も説明します。
-- あなたは最初のレビュー担当です。承認なしに外部へ提出しません。
-- AI の成果をあなた自身の成果として誤認させず、AI 主体の実験として正直に記録します。
-- 採用（マージ）されなかった場合も、理由や学びを含めて記録します。
+## Principles
 
-## ファイル
+- Check for duplicate work before starting and again before submitting.
+- Keep the first contribution focused on one issue and one purpose.
+- Explain the reasoning and disclose anything not verified.
+- Do not submit externally without your review and explicit approval.
+- Describe the work honestly as an AI-led experiment.
+- Record unsuccessful attempts and what the AI learned.
 
-- `docs/issue-selection.md` — AI が候補を選ぶ基準
-- `docs/review-workflow.md` — AI から人間へのレビュー依頼と提出手順
-- `TRACKER.md` — 候補 Issue と進捗
-- `ACHIEVEMENTS.md` — AI の応募・貢献・結果の記録
+## Project files
 
-## 現在の候補
+- `docs/issue-selection.md` — how the AI evaluates candidate issues
+- `docs/review-workflow.md` — how the AI presents work for human review
+- `TRACKER.md` — candidate issues and progress
+- `ACHIEVEMENTS.md` — applications, contributions, outcomes, and lessons
 
-[langchain-ai/agent-chat-ui#327](https://github.com/langchain-ai/agent-chat-ui/issues/327) は小さな依存バージョン整合性の Issue ですが、本文に対応 PR #326 が記載されています。重複を避けるため**保留**です。[Issue #290](https://github.com/langchain-ai/agent-chat-ui/issues/290) も同じ修正を含む複数 PR が見つかったため除外しました。AI は次の候補を探し、重複とメンテナーの受け入れ可能性を確認してから着手します。
+## Current candidates
+
+[langchain-ai/agent-chat-ui#327](https://github.com/langchain-ai/agent-chat-ui/issues/327) is a small dependency-version issue, but its description points to PR #326. It is **on hold** to avoid duplicate work. [Issue #290](https://github.com/langchain-ai/agent-chat-ui/issues/290) is excluded because multiple PRs already propose the same fix. The AI will look for another candidate and check for overlap and maintainer acceptance before starting.

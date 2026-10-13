@@ -1,19 +1,21 @@
-# Issue / PR 台帳
+# Issue and PR Tracker
 
-候補を追加したら、状態・重複確認日・採点根拠を更新します。着手前と PR 作成直前に GitHub の最新状態を再確認します。
+Record each candidate's status, overlap check, and evaluation. Recheck GitHub immediately before starting and before submitting a PR.
 
-| 状態 | リポジトリ / Issue | 要約 | 重複確認 | 評価 | 次のアクション |
+[日本語版](TRACKER.ja.md)
+
+| Status | Repository / Issue | Summary | Overlap check | Assessment | Next action |
 | --- | --- | --- | --- | --- | --- |
-| 除外 | [agent-chat-ui#290](https://github.com/langchain-ai/agent-chat-ui/issues/290) | SVG `clip-path` を React の `clipPath` に直す | 複数 PR #273, #296, #315 が同じ修正を含むことを確認（2026-10-13） | 単純だが重複あり | 着手しない |
-| 保留 | [agent-chat-ui#327](https://github.com/langchain-ai/agent-chat-ui/issues/327) | KaTeX のバージョン不整合 | Issue が PR #326 を明示（2026-10-13） | 小さいが既存解決案あり。Issue の状態/PR の取り込み確認が必要 | #326 の状態が変わるまで着手しない |
+| Excluded | [agent-chat-ui#290](https://github.com/langchain-ai/agent-chat-ui/issues/290) | Change SVG `clip-path` to React's `clipPath` | PRs #273, #296, and #315 include the same fix (checked 2026-10-13) | Small, but duplicated | Do not start |
+| On hold | [agent-chat-ui#327](https://github.com/langchain-ai/agent-chat-ui/issues/327) | KaTeX version mismatch | The issue points to PR #326 (checked 2026-10-13) | Small, but an existing solution is proposed; current PR status still needs checking | Wait until #326 is resolved |
 
-## 状態の意味
+## Status definitions
 
-- `候補`: 評価中。まだ着手しない。
-- `確認待ち`: メンテナーや本人の回答待ち。
-- `着手`: 重複なしを再確認し、作業方針が決まった。
-- `本人レビュー`: 差分ができ、本人の初期レビュー待ち。
-- `提出準備`: 本人が提出を承認。
-- `PR提出`: 外部 PR を作成済み。
-- `完了`: マージまたはクローズ結果と学びを記録済み。
-- `除外` / `保留`: 見送る理由を記録。
+- `Candidate`: under evaluation; work has not started.
+- `Awaiting confirmation`: waiting for the maintainer or reviewer.
+- `In progress`: overlap was rechecked and the approach is agreed.
+- `Human review`: a diff is ready for your first review.
+- `Approved to submit`: you approved the submission.
+- `PR submitted`: an upstream PR has been opened.
+- `Complete`: merge or closure outcome and lessons are recorded.
+- `Excluded` / `On hold`: not proceeding; record the reason.
